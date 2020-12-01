@@ -30,7 +30,7 @@ public:
         paquete = Paquete();
     }  //constructor
 
-    Compra(string nombreUsuario, string direccion, string telefono, string correo, char producto, int cantidadCompra){
+    Compra(string nombreUsuario, string direccion, string telefono, string correo, char producto, int cantidadCompra, Paquete p1){
         this-> nombreUsuario = nombreUsuario;
         this-> cantidadCompra = cantidadCompra;
         this-> direccion = direccion;
@@ -104,10 +104,12 @@ public:
     void continuar(){
         cout << "\nContinua con tu proceso de compra" << endl;
     }
+    
+    Paquete getPaquete(){return paquete;}
 
     string imprimirCom(){
         string prod(1,producto);
-        return "\nEsta es tu informacion. Usuario: " + nombreUsuario + ", Direccion: " + direccion + ", Telefono: " + telefono + ", Correo: " + correo + ", Producto: " + prod + ", Cantidad de compra: " + to_string(cantidadCompra) + "\n";
+        return "\nEsta es tu informacion. Usuario: " + nombreUsuario + ", Direccion: " + direccion + ", Telefono: " + telefono + ", Correo: " + correo + ", Producto: " + prod + ", Cantidad de compra: " + to_string(cantidadCompra) + "," + paquete.imprimir() + "\n";
     }
 
 };//Clase Compra
